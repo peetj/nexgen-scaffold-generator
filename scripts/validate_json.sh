@@ -16,4 +16,19 @@ if [ ! -f "$JSON_FILE" ]; then
   exit 1
 fi
 
-python3 "$SCRIPT_DIR/validate_json.py" "$SCHEMA_FILE" "$JSON_FILE"
+PYTHON_CMD=""
+
+if command -v python3 >/dev/null 2>&1; then
+  PYTHON_CMD="python3"
+elif command -v python >/dev/null 2>&1; then
+  if python -c "import sys; raise SystemExit(0 if sys.version_info.major == 3 else 1)"; then
+    PYTHON_CMD="python"
+  fi
+fi
+
+if [ -z "$PYTHON_CMD" ]; then
+  echo "Error: Python 3 is required but was not found."
+  exit 1
+fi
+
+"$PYTHON_CMD" "$SCRIPT_DIR/validate_json.py" "$SCHEMA_FILE" "$JSON_FILE"

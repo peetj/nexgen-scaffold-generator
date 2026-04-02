@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+OUTPUT_DIR="."
+JSON_FILE=""
+
+usage() {
+  echo "Usage: nexgen-scaffold [--output DIR] path/to/scaffold.json"
+  exit 1
+}
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --output)
+      shift
+      [ "$#" -gt 0 ] || usage
+      OUTPUT_DIR="$1"
+      ;;
+    -*)
+      usage
+      ;;
+    *)
+      if [ -z "$JSON_FILE" ]; then
+        JSON_FILE="$1"
+      else
+        usage
+      fi
+      ;;
+  esac
+  shift
+done
+
+[ -n "$JSON_FILE" ] || usage
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+"$ROOT_DIR/scripts/setup.sh"
+"$ROOT_DIR/scripts/validate_json.sh" "$JSON_FILE"
+
+(
+  cd "$OUTPUT_DIR"
+  "$ROOT_DIR/scripts/create_from_json.sh" "$JSON_FILE"
+)
+
+echo
+echo "Scaffold created successfully in: $OUTPUT_DIR"
