@@ -1,0 +1,173 @@
+{
+  "name": "nexgen-camera-wall",
+  "files": [
+    {
+      "name": "README.md",
+      "content": "# Nexgen Camera Wall\n\nA classroom live-view wall for multiple robot camera streams.\n"
+    },
+    {
+      "name": ".gitignore",
+      "content": "node_modules/\ndist/\n.env\n"
+    },
+    {
+      "name": "LICENSE"
+    }
+  ],
+  "dirs": [
+    {
+      "name": "docs",
+      "files": [
+        {
+          "name": "overview.md"
+        },
+        {
+          "name": "architecture.md"
+        },
+        {
+          "name": "ui-notes.md"
+        }
+      ],
+      "dirs": [
+        {
+          "name": "screenshots",
+          "files": [],
+          "dirs": []
+        }
+      ]
+    },
+    {
+      "name": "app",
+      "files": [],
+      "dirs": [
+        {
+          "name": "frontend",
+          "files": [
+            {
+              "name": "README.md"
+            },
+            {
+              "name": "package.json"
+            }
+          ],
+          "dirs": [
+            {
+              "name": "public",
+              "files": [
+                {
+                  "name": "placeholder.txt"
+                }
+              ],
+              "dirs": []
+            },
+            {
+              "name": "src",
+              "files": [
+                {
+                  "name": "main.jsx"
+                },
+                {
+                  "name": "App.jsx"
+                }
+              ],
+              "dirs": [
+                { "name": "components", "files": [], "dirs": [] },
+                { "name": "pages", "files": [], "dirs": [] },
+                { "name": "hooks", "files": [], "dirs": [] },
+                { "name": "services", "files": [], "dirs": [] },
+                { "name": "data", "files": [], "dirs": [] },
+                { "name": "styles", "files": [], "dirs": [] },
+                { "name": "utils", "files": [], "dirs": [] }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "backend",
+          "files": [
+            {
+              "name": "README.md"
+            },
+            {
+              "name": "package.json"
+            },
+            {
+              "name": ".env.example"
+            }
+          ],
+          "dirs": [
+            {
+              "name": "src",
+              "files": [
+                {
+                  "name": "index.js"
+                }
+              ],
+              "dirs": [
+                { "name": "routes", "files": [], "dirs": [] },
+                { "name": "services", "files": [], "dirs": [] },
+                { "name": "config", "files": [], "dirs": [] },
+                { "name": "data", "files": [], "dirs": [] }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "infra",
+      "files": [],
+      "dirs": [
+        {
+          "name": "docker",
+          "files": [
+            { "name": "frontend.Dockerfile" },
+            { "name": "backend.Dockerfile" },
+            { "name": "docker-compose.yml" }
+          ],
+          "dirs": []
+        },
+        {
+          "name": "nginx",
+          "files": [
+            { "name": "placeholder.conf" }
+          ],
+          "dirs": []
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "files": [
+        { "name": "setup.sh", "chmod": "+x" },
+        { "name": "run-frontend.sh", "chmod": "+x" },
+        { "name": "run-backend.sh", "chmod": "+x" },
+        { "name": "lint-all.sh", "chmod": "+x" }
+      ],
+      "dirs": []
+    },
+    {
+      "name": ".github",
+      "files": [
+        { "name": "pull_request_template.md" }
+      ],
+      "dirs": [
+        {
+          "name": "workflows",
+          "files": [
+            { "name": "frontend-ci.yml" },
+            { "name": "backend-ci.yml" }
+          ],
+          "dirs": []
+        },
+        {
+          "name": "ISSUE_TEMPLATE",
+          "files": [
+            { "name": "bug_report.md" },
+            { "name": "feature_request.md" }
+          ],
+          "dirs": []
+        }
+      ]
+    }
+  ]
+}

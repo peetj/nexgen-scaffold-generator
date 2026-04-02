@@ -1,0 +1,25 @@
+{
+  "name": "simple-project",
+  "files": [
+    {
+      "name": "README.md",
+      "content": "# Simple Project\n"
+    },
+    {
+      "name": ".gitignore",
+      "content": "node_modules/\n.env\n"
+    }
+  ],
+  "dirs": [
+    {
+      "name": "src",
+      "files": [
+        {
+          "name": "main.js",
+          "content": "console.log('hello');\n"
+        }
+      ],
+      "dirs": []
+    }
+  ]
+}

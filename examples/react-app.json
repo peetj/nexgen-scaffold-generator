@@ -1,0 +1,55 @@
+{
+  "name": "react-app-example",
+  "files": [
+    {
+      "name": "README.md",
+      "content": "# React App Example\n"
+    },
+    {
+      "name": ".gitignore",
+      "content": "node_modules/\ndist/\n.env\n"
+    }
+  ],
+  "dirs": [
+    {
+      "name": "public",
+      "files": [
+        {
+          "name": "placeholder.txt",
+          "content": "public assets go here\n"
+        }
+      ],
+      "dirs": []
+    },
+    {
+      "name": "src",
+      "files": [
+        {
+          "name": "main.jsx",
+          "content": "// app entry point\n"
+        },
+        {
+          "name": "App.jsx",
+          "content": "// root component\n"
+        }
+      ],
+      "dirs": [
+        {
+          "name": "components",
+          "files": [],
+          "dirs": []
+        },
+        {
+          "name": "pages",
+          "files": [],
+          "dirs": []
+        },
+        {
+          "name": "styles",
+          "files": [],
+          "dirs": []
+        }
+      ]
+    }
+  ]
+}

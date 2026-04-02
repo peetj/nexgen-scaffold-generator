@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/scaffold.schema.json",
+  "title": "Project Scaffold Schema",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/file"
+      },
+      "default": []
+    },
+    "dirs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/directory"
+      },
+      "default": []
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": "string"
+        },
+        "chmod": {
+          "type": "string",
+          "enum": ["+x"]
+        }
+      }
+    },
+    "directory": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/file"
+          },
+          "default": []
+        },
+        "dirs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/directory"
+          },
+          "default": []
+        }
+      }
+    }
+  }
+}
